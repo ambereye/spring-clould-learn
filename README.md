@@ -20,4 +20,7 @@ eureka.instance.prefer-ip-address:是否将当前服务的IP注册到Eureka Serv
 @DeleteMapping 
 @PathVariable：获取url中的数据
 @RequestBody：用来接收前端传递给后端的json字符串中的数据的(请求体中的数据的)(前端需使用POST方式进行提交)
-             在后端的同一个接收方法里，@RequestBody与@RequestParam()可以同时使用，@RequestBody最多只能有一个，而@RequestParam()可以有多个
+             在后端的同一个接收方法里，@RequestBody与@RequestParam()可以同时使用，@RequestBody最多只能有一个，而@RequestParam()可以有多个。
+
+###RestTemplate
+-RestTemplate是Spring框架提供基于REST的服务组件，底层对HTTP请求以及响应进行了封装，提供很多访问REST的服务的方法简化代码开发。
