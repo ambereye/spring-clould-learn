@@ -24,3 +24,10 @@ eureka.instance.prefer-ip-address:是否将当前服务的IP注册到Eureka Serv
 
 ###RestTemplate
 -RestTemplate是Spring框架提供基于REST的服务组件，底层对HTTP请求以及响应进行了封装，提供很多访问REST的服务的方法简化代码开发。
+
+###consumer消费者
+
+###服务网关
+Sc继承了Zuul组件，实现了网关。
+是NetFlix提供的开源API网关服务器，是客户端和昂站后面所有请求的中间层，对面开放一个API，
+将所有请求导入统一的入口，屏蔽了服务端具体实现逻辑，Zuul可以实现反向代理的功能，在网关内部实现动态路由/身份认证/ip过滤/数据监控等
