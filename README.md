@@ -35,3 +35,11 @@ Sc继承了Zuul组件，实现了网关。
 zuul.routes.provider:给服务提供者provider设置映射
 @EnableZuulProxy:包含@EnableZuulServer，设置该类为网关的启动类
 @EnableAutoConfiguration:可以帮助Sb应用将所有符合条件的@Configuration配置加载当前sb创建并使用的Ioc容器中。
+
+###Ribbon 负载均衡
+SC Ribbon是一个负载均衡的解决方案，Netflix发布的负载均衡器，SC Ribbon是基于Netfilx实现的，是一个用于请求进行控制的负载均衡的客户端
+
+在注册中心对Ribbon进行注册之后，Ribbon就可以基于某种负载均衡算法，如轮询/随机/加权轮询/加权随机
+实际开发中 scRibbon需要结合scEureka来使用.
+
+ @LoadBalanced:声明一个基于Ribbon的负载均衡
