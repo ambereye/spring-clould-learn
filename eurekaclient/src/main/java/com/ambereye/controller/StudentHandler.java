@@ -3,6 +3,7 @@ package com.ambereye.controller;
 import com.ambereye.entity.Student;
 import com.ambereye.repository.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Collection;
@@ -18,6 +19,9 @@ import java.util.Collection;
 public class StudentHandler {
     @Autowired
     private StudentRepository studentRepository;
+
+    @Value("${server.port}")
+    private String port;
 
     @GetMapping("/findAll")
     public Collection<Student> findAll(){
@@ -42,5 +46,10 @@ public class StudentHandler {
     @DeleteMapping("/deleteById/{id}")
     public void update(@PathVariable("id") long id){
         studentRepository.deleteById(id);
+    }
+
+    @GetMapping("/index")
+    public String index() {
+        return "当前端口" + this.port;
     }
 }
