@@ -42,4 +42,16 @@ SC Ribbon是一个负载均衡的解决方案，Netflix发布的负载均衡器�
 在注册中心对Ribbon进行注册之后，Ribbon就可以基于某种负载均衡算法，如轮询/随机/加权轮询/加权随机
 实际开发中 scRibbon需要结合scEureka来使用.
 
- @LoadBalanced:声明一个基于Ribbon的负载均衡
+@LoadBalanced:声明一个基于Ribbon的负载均衡
+
+###Feign
+跟ribbon一样,fegin也是由Netflix提供的,fegin是一个声明式 模板化的WebService客户端,它简化了开发者编写Web服务客户端操作,开发者可以通过
+简单的接口和注解来调用HTTP API, scFegin,它整合了Ribbon和Hystrix,具有可插拔/基于注解/负载均衡/服务熔断的一系列便捷功能
+
+相比较于Riibon+RestTemolate的方式,Fegin大大简化了代码的开发,Fegin支持多种注解,包括Fegin注解/JAX-RS注解/springMVC注解等
+springCloud对Fegin进行了优化,整合了Ribbon和Eureka.Fegin集成了Hysstrix,具备服务熔断
+
+Ribbon和Eureka区别
+Ribbon是一个通用的HTTP客户端工具,Fegin是基于Ribbon实现的
+
+feign.hystrix.enabled:是否开启熔断器
