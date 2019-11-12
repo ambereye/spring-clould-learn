@@ -90,3 +90,10 @@ cloud.config.fail-fast: true/false 设置客户端有限判断Config Server 获�
 通过sprirng.application.name结合sprirng.profiles.active拼接目标配置文件名,configclient-dev.yml
 Config Server查找该文件
 
+
+###服务跟踪
+@EnableZipkinServer声明启动zipkin
+
+srping.sleuth.web.client.enabled: true  设置开启请求跟踪
+srping.sleuth.sampler.probability: 1.0 设置采样比例
+srping.zipkin.base-url: http://localhost:9090/  zipkin Server地址
