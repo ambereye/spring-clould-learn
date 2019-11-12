@@ -49,9 +49,26 @@ SC Ribbon是一个负载均衡的解决方案，Netflix发布的负载均衡器�
 简单的接口和注解来调用HTTP API, scFegin,它整合了Ribbon和Hystrix,具有可插拔/基于注解/负载均衡/服务熔断的一系列便捷功能
 
 相比较于Riibon+RestTemolate的方式,Fegin大大简化了代码的开发,Fegin支持多种注解,包括Fegin注解/JAX-RS注解/springMVC注解等
-springCloud对Fegin进行了优化,整合了Ribbon和Eureka.Fegin集成了Hysstrix,具备服务熔断
+springCloud对Fegin进行了优化,整合了Ribbon和Eureka.Fegin集成了Hystrix,具备服务熔断
 
 Ribbon和Eureka区别
 Ribbon是一个通用的HTTP客户端工具,Fegin是基于Ribbon实现的
 
 feign.hystrix.enabled:是否开启熔断器
+
+###Hystrix 容错机制
+在不该各个微服务调用关系的前提下，针对错误情况进行预先处理
+-设计原则
+服务隔离机制
+服务降级机制
+熔断机制
+提供实时的监控和报警功能
+提供实时的配置修改功能
+Hystrix数据监控需要结合Spring Boot Actuator来使用，Actuator提供服务的健康监控/数据统计
+通过hystrix.stream节点获取监控的强求数据，停工了可视化监控界面
+
+@EnableCircuitBreaker:声明启用数据监控
+@EnableHystrixDashboard:声明启用可视化数据监控
+
+监控请求数据，访问http://localhost:8060/actuator/hystrix.stream
+可视化监控，在http://localhost:8060/hystrix输入节点地址查看
