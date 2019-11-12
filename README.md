@@ -72,3 +72,21 @@ Hystrix数据监控需要结合Spring Boot Actuator来使用，Actuator提供服
 
 监控请求数据，访问http://localhost:8060/actuator/hystrix.stream
 可视化监控，在http://localhost:8060/hystrix输入节点地址查看
+
+###Spring Cloud配置中心
+Spring Cloud Config,通过服务端可以为多个客户端提供配置服务。
+Spring Cloud Config可以将配置文件存储在本地，也可以将配置文件存储在远程Git仓库，创建Config Server,通过它管理所有的配置文件。
+
+####本地文件系统
+profiles.active: 配置文件获取方式
+cloud.config.server.native.search-location:本地配置文件存放路径
+- resources路径下创建shared文件夹放入
+
+@EnableConfigServer 声明配置中心
+maven 分支spring-cloud-starter-config表示读取  client表示提供
+
+cloud.config.uri: 本地Config Server的访问路径
+cloud.config.fail-fast: true/false 设置客户端有限判断Config Server 获取是否正常
+通过sprirng.application.name结合sprirng.profiles.active拼接目标配置文件名,configclient-dev.yml
+Config Server查找该文件
+
